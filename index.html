@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for mom 💗</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="card">
+    <div class="hero-container">
+      <img id="daily-img" alt="Daily View">
+      <div class="quote-box" id="quote-box">Loading quote...</div>
+    </div>
+
+    <h1>for mom 💗</h1>
+    <div class="subtitle">a little window between us ✨</div>
+
+    <div class="calendar-weather-container">
+      <div class="calendar-widget">
+        <div class="cal-month-year" id="cal-month"></div>
+        <div class="cal-day" id="cal-day"></div>
+        <div class="cal-weekday" id="cal-weekday"></div>
+      </div>
+      
+      <div class="weather-widget">
+        <div class="weather-icon" id="weather-icon">☁️</div>
+        <div class="weather-temp" id="weather-temp">--°C</div>
+        <div class="weather-desc" id="weather-desc">Loading...</div>
+      </div>
+    </div>
+
+    <div class="clock-container">
+
+      <!-- Tokyo -->
+      <div class="clock-box">
+        <div class="city">🌸 Tokyo</div>
+        <div class="clock">
+          <div class="clock-number num-12">12</div>
+          <div class="clock-number num-3">3</div>
+          <div class="clock-number num-6">6</div>
+          <div class="clock-number num-9">9</div>
+          <div class="hand hour" id="tokyo-hour"></div>
+          <div class="hand minute" id="tokyo-minute"></div>
+          <div class="hand second" id="tokyo-second"></div>
+          <div class="center-dot"></div>
+        </div>
+      </div>
+
+      <!-- France -->
+      <div class="clock-box">
+        <div class="city">☀️ Antibes</div>
+        <div class="clock">
+          <div class="clock-number num-12">12</div>
+          <div class="clock-number num-3">3</div>
+          <div class="clock-number num-6">6</div>
+          <div class="clock-number num-9">9</div>
+          <div class="hand hour" id="fr-hour"></div>
+          <div class="hand minute" id="fr-minute"></div>
+          <div class="hand second" id="fr-second"></div>
+          <div class="center-dot"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Note & Utilities Buttons -->
+    <div class="utilities-grid">
+      <div class="note-card main-btn" onclick="openNote()">
+        📝 write a daily note 💗
+      </div>
+      <div class="note-card" onclick="openDiary()">
+        📖 open diary
+      </div>
+      <div class="note-card" onclick="openSong()">
+        🎵 suggest a song
+      </div>
+    </div>
+
+    <!-- WRITE NOTE MODAL -->
+    <div id="noteModal" class="modal">
+      <div class="modal-content">
+        <h2>your note 💌</h2>
+        <textarea id="noteText" placeholder="write your day..."></textarea>
+        
+        <div class="clip">
+          <label for="fileUpload" class="upload-label">
+            📎 attach photo (saves to diary)
+          </label>
+          <input type="file" id="fileUpload" accept="image/*" onchange="handleFileUpload(event)">
+          <div id="imagePreview" class="image-preview-box"></div>
+        </div>
+
+        <div class="buttons">
+          <button onclick="sendNote('whatsapp')">WhatsApp</button>
+          <button onclick="sendNote('email')">Email</button>
+        </div>
+        <button class="close" onclick="closeNote()">close</button>
+      </div>
+    </div>
+
+    <!-- DIARY MODAL -->
+    <div id="diaryModal" class="modal">
+      <div class="modal-content diary-content">
+        <h2>diary & memories 📖</h2>
+        <div class="diary-entries" id="diary-entries">
+          <!-- Entries mapped here via JS -->
+        </div>
+        <button class="close" onclick="closeDiary()">close</button>
+      </div>
+    </div>
+
+    <!-- SONG MODAL -->
+    <div id="songModal" class="modal">
+      <div class="modal-content song-content">
+        <h2>song for today 🎵</h2>
+        <div class="song-card">
+          <div class="song-title" id="song-title">Song Name</div>
+          <div class="song-artist" id="song-artist">Artist Name</div>
+          <a href="#" target="_blank" id="song-link" class="listen-btn">Listen on YouTube</a>
+        </div>
+        <button class="close" onclick="closeSong()">close</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      thinking of you 💭💗
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
