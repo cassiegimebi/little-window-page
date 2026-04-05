@@ -175,7 +175,7 @@ function sendNote(type) {
   const message = encodeURIComponent("mom's note 💌:\n\n" + text);
 
   if (type === "whatsapp") {
-    const phone = "819067179962";
+    const phone = "PHONENUMBER";
     window.location.href = "https://wa.me/" + phone + "?text=" + message;
   }
 
